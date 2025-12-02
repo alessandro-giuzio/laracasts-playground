@@ -1,0 +1,23 @@
+# OS junk
+.DS_Store
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# PHP / Composer
+vendor/
+
+# Env files
+.env
+.env.local
+.env.*
+
+# Build / dist
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
