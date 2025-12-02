@@ -1,18 +1,15 @@
 <?php
 
-
-require_once 'functions.php';
+require 'functions.php';
+//require 'router.php';
 require 'Database.php';
 
-/* require'router.php'; */
+$config = require('config.php');
+$db = new Database($config['database']);
 
-// Connect to the database and  execute a query
+$id = $_GET["id"];
+$query = "select * from posts where id = :id";
 
-$config = require 'config.php';
-
-$db = new Database($config['databse']);
-$statement = $db->query("SELECT * FROM posts");
-$posts = $statement->fetchAll();
-
+$posts = $db->query($query, [":id" => $id])->fetch();
 
 dd($posts);
