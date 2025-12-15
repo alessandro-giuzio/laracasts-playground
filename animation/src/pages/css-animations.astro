@@ -13,6 +13,21 @@ import Layout from '../layouts/Layout.astro';
         <div class='box box--3'></div>
         <div class='box box--4'></div>
       </div>
+      <svg
+        style='position: absolute'
+        width='750'
+        height='419'
+        viewBox='0 0 750 419'
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'>
+        <path
+          id='motion-path'
+          d='M78.6641 146.624C139.464 147.424 201.331 96.2911 224.664 70.6244L285.664 170.624C315.997 129.958 379.664 61.6244 391.664 113.624C403.664 165.624 487.997 162.624 528.664 154.624C574.264 71.4244 533.664 31.2911 507.664 21.6244C611.331 1.2911 801.464 -20.7756 732.664 53.6244C663.864 128.024 587.331 298.624 557.664 374.624C401.664 336.224 199.331 385.958 117.664 415.624L1.66406 241.624'
+          stroke='black'
+          stroke-width='4'></path>
+      </svg>
+
+      <div class='rectangle'></div>
     </div>
   </main>
 </Layout>
@@ -40,6 +55,17 @@ import Layout from '../layouts/Layout.astro';
     animation: tadaaa 2s ease-in-out 3 forwards;
   }
 
+  .rectangle {
+    width: 50px;
+    height: 30px;
+
+    background-color: hotpink;
+    border-radius: 0.25rem;
+
+    offset-path: url(#motion-path);
+
+    animation: follow-path 5s ease-in-out infinite alternate;
+  }
   .box--2 {
     animation-delay: 0.5s;
   }
@@ -76,6 +102,18 @@ import Layout from '../layouts/Layout.astro';
     }
     100% {
       transform: translateX(150px) rotate(90deg) scale(1.1);
+    }
+  }
+
+  @keyframes follow-path {
+    45% {
+      offset-distance: 55%;
+    }
+    55% {
+      offset-distance: 45%;
+    }
+    to {
+      offset-distance: 100%;
     }
   }
 </style>
