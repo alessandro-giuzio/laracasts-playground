@@ -1,7 +1,7 @@
 ---
-import Nav from "../components/Nav.astro";
+import Nav from '../components/Nav.astro';
 export interface Props {
-	lesson?: string;
+  lesson?: string;
 }
 const { lesson } = Astro.props;
 ---
@@ -18,7 +18,12 @@ const { lesson } = Astro.props;
       rel='stylesheet'
     />
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-    <link rel='stylesheet' href='../assets/styles.css' />
+    <link rel='stylesheet' href='/assets/styles.css' />
+    <!--  <link
+      rel='stylesheet'
+      href='/assets/animations.css'
+      media='(prefers-reduced-motion: no-preference)'
+    /> -->
     <meta name='generator' content={Astro.generator} />
     <title>Css Animations</title>
   </head>

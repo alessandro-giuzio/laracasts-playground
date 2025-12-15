@@ -80,12 +80,12 @@ time,
 mark,
 audio,
 video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -99,28 +99,115 @@ hgroup,
 menu,
 nav,
 section {
-	display: block;
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
 ol,
 ul {
-	list-style: none;
+  list-style: none;
 }
 blockquote,
 q {
-	quotes: none;
+  quotes: none;
 }
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-	content: "";
-	content: none;
+  content: '';
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 /* End CSS Reset */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem 1rem;
+}
+
+h1 {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+/* .square {
+  height: 100px;
+  width: 100px;
+  background-color: oklch(0.69 0.18 245.62);
+  border-radius: 0.25rem;
+  transition-property: transform, background-color, border-radius;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+  transform: rotate(0deg);
+}
+
+.square:hover {
+  transform: rotate(45deg);
+  background-color: green;
+  border-radius: 2rem;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.box {
+  height: 50px;
+  width: 50px;
+  background-color: oklch(0.69 0.18 245.62);
+  border-radius: 0.25rem;
+  transition-property: transform;
+  transition-duration: 1s;
+}
+
+.container:hover .box {
+  transform: translateX(400px);
+}
+
+.box--1 {
+  transition-timing-function: ease-in-out;
+}
+.box--2 {
+  transition-timing-function: linear;
+}
+.box--3 {
+  transition-timing-function: ease;
+}
+.box--4 {
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+ */
+.popover {
+  border: 2px solid oklch(0.6 0.2 220);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  background-color: oklch(0.95 0.02 240);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+}
+
+.popover:popover-open {
+  animation: slideIn 300ms ease-in-out;
+}
+
+.popover h2 {
+  margin: 0;
+  color: oklch(0.3 0.2 220);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

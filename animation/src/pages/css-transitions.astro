@@ -14,35 +14,34 @@ import Layout from '../layouts/Layout.astro';
         <div class='box box--4'></div>
       </div>
     </div>
+    <!-- Pophover Trigger -->
+    <button popovertarget='popover'>Make it POP!</button>
+    <!-- Popover -->
+    <div class='popover' popover id='popover'>
+      <h2>What's POP-ing?</h2>
+    </div>
   </main>
 </Layout>
-<style scoped>
-  main {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 1rem 2rem 1rem;
-  }
-
-  h1 {
-    text-align: left;
-    margin-bottom: 2rem;
-  }
-
+<style>
   .square {
     height: 100px;
     width: 100px;
     background-color: oklch(0.69 0.18 245.62);
     border-radius: 0.25rem;
-    transition-property: transform, background-color, border-radius;
-    transition-duration: 300ms;
-    transition-timing-function: ease-in-out;
-    transform: rotate(0deg);
-  }
+    /* transition-property: transform background-color border-radius;
+    transition-duration: 800ms;
+    transition-timing-function:
+      steps(4, start), steps(5, jump-start), steps(3, start); */
+    transition:
+      transform 800ms steps(5, start),
+      background-color 300ms ease-in-out,
+      border-radius 300ms ease-in-out;
 
-  .square:hover {
-    transform: rotate(45deg);
-    background-color: tomato;
-    border-radius: 2rem;
+    &:hover {
+      transform: rotate(45deg);
+      background-color: green;
+      border-radius: 2rem;
+    }
   }
   .container {
     display: flex;
@@ -73,6 +72,49 @@ import Layout from '../layouts/Layout.astro';
     transition-timing-function: ease;
   }
   .box--4 {
-    transition-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    transition-timing-function: cubic-bezier(0.7555, 0.005, 0.855, 0.06);
+  }
+
+  button {
+    --button-color: oklch(0.69 0.18 245.62);
+
+    background-color: var(--button-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-size: 0.95rem;
+    margin-top: 2rem;
+
+    &:hover {
+      background: color-mix(in oklch, var(--button-color) 80%, black 20%);
+    }
+  }
+
+  [popover] {
+    margin: auto;
+    padding: 1rem 2rem;
+    width: 280px;
+    border-radius: 0.25rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    opacity: 0;
+    transform: scale(0.8);
+    transition-property: opacity, transform, display;
+    transition-duration: 500ms;
+    transition-behavior: allow-discrete;
+  }
+  [popover]:popover-open {
+    opacity: 1;
+    transform: scale(1);
+
+    @starting-style {
+      opacity: 0;
+      transform: translateY(2rem);
+    }
+  }
+
+  [popover]::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
   }
 </style>
