@@ -22,16 +22,8 @@ import Layout from '../layouts/Layout.astro';
     width: 100px;
     background-color: oklch(0.69 0.18 245.62);
     border-radius: 0.25rem;
-    transition-property: transform, background-color, border-radius;
-    transition-duration: 300ms;
-    transition-timing-function: ease-in-out;
-    transform: rotate(0deg);
-  }
 
-  .square:hover {
-    transform: rotate(45deg);
-    background-color: green;
-    border-radius: 2rem;
+    animation: move 3s ease-in-out 4;
   }
   .container {
     display: flex;
@@ -44,24 +36,46 @@ import Layout from '../layouts/Layout.astro';
     width: 50px;
     background-color: oklch(0.69 0.18 245.62);
     border-radius: 0.25rem;
-    transition-property: transform;
-    transition-duration: 1s;
+
+    animation: tadaaa 2s ease-in-out 3 forwards;
   }
 
-  .container:hover .box {
-    transform: translateX(400px);
-  }
-
-  .box--1 {
-    transition-timing-function: ease-in-out;
-  }
   .box--2 {
-    transition-timing-function: linear;
+    animation-delay: 0.5s;
   }
   .box--3 {
-    transition-timing-function: ease;
+    animation-delay: 1s;
   }
   .box--4 {
-    transition-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    animation-delay: 1.5s;
+  }
+
+  @keyframes move {
+    from {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(300px) scale(0.5);
+    }
+    50% {
+      transform: translateX(300px) translateY(200px) scale(0.5);
+    }
+    75% {
+      transform: translateX(0) translateY(200px) scale(1.5);
+    }
+    to {
+      transform: translateX(0) translateY(0) rotate(90deg);
+    }
+  }
+
+  @keyframes tadaaa {
+    40%,
+    60% {
+      transform: translateX(150px) scale(0.8) rotate(-3deg);
+      animation-timing-function: cubic-bezier(0.26, 1.75, 0.69, 0.19);
+    }
+    100% {
+      transform: translateX(150px) rotate(90deg) scale(1.1);
+    }
   }
 </style>
