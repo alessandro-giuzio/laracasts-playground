@@ -28,10 +28,29 @@ import Layout from '../layouts/Layout.astro';
       </svg>
 
       <div class='rectangle'></div>
+      <div class='cuadro'></div>
+      <div class='container-1'>
+        <div class='star'></div>
+        <div class='marker'></div>
+      </div>
     </div>
   </main>
 </Layout>
 <style>
+  :root {
+    --star: polygon(
+      50% 0%,
+      61% 35%,
+      98% 35%,
+      68% 57%,
+      79% 91%,
+      50% 70%,
+      21% 91%,
+      32% 57%,
+      2% 35%,
+      39% 35%
+    );
+  }
   .square {
     height: 100px;
     width: 100px;
@@ -66,6 +85,33 @@ import Layout from '../layouts/Layout.astro';
 
     animation: follow-path 5s ease-in-out infinite alternate;
   }
+
+  .container-1 {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    margin-top: 2rem;
+    margin-top: 25rem;
+  }
+  .star {
+    position: absolute;
+    inset: 0;
+    background: hotpink;
+    clip-path: var(--star);
+  }
+
+  .marker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15px;
+    height: 6px;
+    background: black;
+
+    offset-path: var(--star);
+    animation: follow-path 5s ease-in-out infinite alternate;
+  }
+
   .box--2 {
     animation-delay: 0.5s;
   }
