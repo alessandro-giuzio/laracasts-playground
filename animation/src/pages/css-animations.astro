@@ -33,6 +33,105 @@ import Layout from '../layouts/Layout.astro';
         <div class='star'></div>
         <div class='marker'></div>
       </div>
+      <div class='container'>
+        <div class='shape shape--one'></div>
+        <div class='shape shape--two'></div>
+        <div class='shape shape--three'></div>
+        <div class='shape shape--three'></div>
+        <div class='shape shape--one'></div>
+        <div class='shape shape--two'></div>
+        <div class='shape shape--two'></div>
+        <div class='shape shape--one'></div>
+        <div class='shape shape--three'></div>
+        <div class='shape shape--one'></div>
+        <div class='shape shape--one'></div>
+        <div class='shape shape--three'></div>
+        <div class='shape shape--two'></div>
+        <div class='shape shape--one'></div>
+        <div class='shape shape--three'></div>
+        <div class='shape shape--one'></div>
+        <div class='shape shape--three'></div>
+        <div class='shape shape--one'></div>
+      </div>
+      <div class='container'>
+        <div class='progress'></div>
+        <article>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Exercitationem voluptas eveniet, quod aliquid adipisci aut
+            consequuntur impedit optio quisquam, incidunt fugit sit iusto
+            ducimus cupiditate non, ex minima aperiam atque unde ut officia
+            eaque illo rerum? Omnis expedita eos cumque, optio aperiam commodi.
+            Perferendis aut, odit molestiae fugiat quibusdam id expedita ducimus
+            voluptatumluptatum
+          </p>
+          <p>
+            quasi natus labore error facere accusantium eligendi quod rerum ea
+            reiciendis necessitatibus iure voluptatibus. Dolores dolorem, itaque
+            enim cupiditate praesentium optio cumque, ipsum dolore illum
+            provident dicta quia officia reprehenderit, recusandae vel nihil
+            iure quisquam inventore fugit perferendis tempora pariatur odit.
+            Tempora, sequi excepturi officia iste eaque, vero ab quis, quam quae
+            ipsum natus veniam? Saepe iusto recusandae alias impedit iste,
+            dolorem voluptate tempore officia suscipit ratione dolore sed
+            eveniet vel sint omnis voluptatem molestiae beatae quod facere nemo
+            dolorum. Rem placeat quidem eos, mollitia beatae nemo illum harum
+            blanditiis voluptates
+          </p>
+
+          <p>
+            necessitatibus minus dolor asperiores cupiditate atque modi incidunt
+            molestias perspiciatis, sint eius iusto omnis quisquam quod? Omnis
+            neque, repudiandae accusamus aut maiores est vero debitis? Aliquam,
+            ducimus suscipit, dolor aliquid ab adipisci sit modi amet quisquam
+            fuga ullam. Cum, placeat quod? Temporibus, exercitationem eveniet
+            porro tempore fugit vitae dignissimos animi veniam error doloribus
+            alias illo, minima fugiat quibusdam perspiciatis hic natus labore
+            sequi molestiae odio recusandae, itaque ad. Assumenda repellat amet
+            in officiis, praesentium facere impedit ratione dolor voluptatum.
+            Incidunt maxime natus, consequatur pariatur optio nam placeat
+            voluptas tenetur ab omnis blanditiis perspiciatis iusto qui sint
+            facere ratione, velit quibusdam illo iure atque. Sapiente ipsam
+            totam molestiae, eaque nemo ipsum ab laboriosam
+          </p>
+          <p>
+            unde, deleniti tempora eum repudiandae, ea facilis omnis recusandae
+            ullam eos! Quae ipsum magni delectus dicta soluta sit ut, nemo
+            sapiente est obcaecati sint assumenda, commodi repellendus
+            voluptatem? Quam libero, delectus laboriosam tempore molestias
+            itaque adipisci cum sint porro cumque voluptates illo, neque
+            provident a! Voluptates cupiditate molestias nobis delectus quas
+            quia consequatur sed, soluta explicabo perspiciatis dolores quaerat
+            vero autem commodi odio, similique laudantium deleniti enim velit.
+            Totam nulla nesciunt officiis vero reiciendis illo, eveniet quas nam
+            provident dicta. Dignissimos neque consectetur sed, quisquam iure
+            corrupti. Perspiciatis veritatis excepturi consectetur fuga mollitia
+            quos, modi amet nulla aliquam dolorum magni quae numquam quibusdam
+            ad eligendi maiores cum earum quis molestiae ratione cupiditate
+            officia voluptates. Dignissimos, eius qui iste amet voluptates
+            cumque sit harum nulla fuga repellat excepturi culpa, perspiciatis
+            deserunt necessitatibus expedita officiis! Dolor totam culpa nulla
+            minima ipsa sequi, consectetur tempora aliquam, doloribus
+          </p>
+          amet cupiditate vero debitis? Aliquam exercitationem cupiditate, eveniet
+          consectetur assumenda, quae architecto unde facilis corporis atque maxime
+          soluta placeat, alias dolore voluptates! Architecto, recusandae? Officiis,
+          dolor at inventore facilis, cumque provident repellat itaque, iure nemo
+          voluptas mollitia quo sunt corporis perspiciatis. Sunt itaque incidunt quasi
+          earum in magnam aliquid nam labore est, facilis odio cupiditate, sapiente
+          sed, quam omnis reprehenderit aperiam! Officia incidunt minima iste tenetur
+          ut, at iusto accusantium adipisci earum odit doloremque animi id voluptate
+          quo, perferendis ducimus recusandae maiores dolores temporibus libero sequi
+          exercitationem debitis cupiditate officiis. Placeat ipsam facilis blanditiis
+          laboriosam, ad explicabo ea. Officia veniam corporis sit aliquid blanditiissam
+          f corporis sit aliquid blanditiis
+        </article>
+      </div>
+      <div class='scroll-container'>
+        <div class='inner'>
+          <div class='squaree'></div>
+        </div>
+      </div>
     </div>
   </main>
 </Layout>
@@ -122,6 +221,69 @@ import Layout from '../layouts/Layout.astro';
     animation-delay: 1.5s;
   }
 
+  .shape {
+    height: 240px;
+    border-radius: 0.5rem;
+    animation: reveal;
+    animation-timeline: view();
+    animation-range-start: 0%;
+    animation-range-end: 50%;
+    animation-fill-mode: both;
+  }
+
+  .shape--one {
+    width: 300px;
+    background: oklch(66.7% 0.295 322.15);
+  }
+  .shape--two {
+    width: 120px;
+    background: oklch(58.5% 0.233 277.117);
+  }
+  .shape--three {
+    width: 240px;
+    background: oklch(78.9% 0.154 211.53);
+  }
+
+  article {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .scroll-container {
+    padding: 2rem;
+    height: 400px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    background: #e7e7e7;
+  }
+
+  .inner {
+    margin: 200px 0;
+  }
+  .squaree {
+    width: 100px;
+    height: 100px;
+    background: hotpink;
+  }
+
+  .progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 5px;
+    background: hotpink;
+    transform-origin: left;
+
+    animation: progress linear;
+    animation-timeline: scroll();
+  }
+
   @keyframes move {
     from {
       transform: translateX(0);
@@ -160,6 +322,19 @@ import Layout from '../layouts/Layout.astro';
     }
     to {
       offset-distance: 100%;
+    }
+  }
+
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      transform: translateY(2rem) scale(0.8);
+    }
+  }
+
+  @keyframes progress {
+    from {
+      transform: scaleX(0);
     }
   }
 </style>

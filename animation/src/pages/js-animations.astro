@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout lesson='js-animations'>
+  <main>
+    <div class='container'>
+      <h1>JavaScript Animations</h1>
+      <div class='square'></div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  .square {
+    height: 100px;
+    width: 100px;
+    background-color: oklch(0.69 0.18 245.62);
+    border-radius: 0.25rem;
+  }
+</style>
+
+<script>
+  const square = document.querySelector('.square') as HTMLDivElement;
+
+  square.style.transform = 'rotate(45deg)';
+
+  let rotation = 0;
+  const MAX_ROTATION = 45;
+
+  const intervalId = setInterval(() => {
+    rotation++;
+    square.style.transform = `rotate(${rotation}deg)`;
+
+    if (rotation >= MAX_ROTATION) {
+      clearInterval(intervalId);
+    }
+  }, 1000 / 60);
+</script>
