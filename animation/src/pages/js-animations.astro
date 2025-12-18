@@ -30,7 +30,7 @@ import Layout from '../layouts/Layout.astro';
 <script>
   const square = document.querySelector('.square') as HTMLDivElement;
 
-  square.style.transform = 'rotate(45deg)';
+  /* square.style.transform = 'rotate(45deg)';
 
   let rotation = 0;
   const MAX_ROTATION = 45;
@@ -42,5 +42,18 @@ import Layout from '../layouts/Layout.astro';
     if (rotation >= MAX_ROTATION) {
       clearInterval(intervalId);
     }
-  }, 1000 / 60);
+  }, 1000 / 60); */
+  const keyframes = [
+    { transform: 'translateX(0px)translateY(0px)' },
+    { transform: 'translateX(100px)' },
+    { transform: 'translateX(100px)translateY(100px)' },
+    { transform: 'translateX(0px) translateY(100px)' },
+    { transform: 'translateX(0px)translateY(0px)' },
+  ];
+  const options: KeyframeAnimationOptions = {
+    duration: 2000,
+    iterations: 3,
+    easing: 'ease-in-out',
+  };
+  square.animate(keyframes, options);
 </script>
