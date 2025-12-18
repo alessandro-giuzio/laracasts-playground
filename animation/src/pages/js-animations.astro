@@ -7,6 +7,10 @@ import Layout from '../layouts/Layout.astro';
     <div class='container'>
       <h1>JavaScript Animations</h1>
       <div class='square'></div>
+      <div class='container-1'>
+        <button>Play</button>
+        <button>Pause</button>
+      </div>
     </div>
   </main>
 </Layout>
@@ -19,6 +23,11 @@ import Layout from '../layouts/Layout.astro';
     gap: 2rem;
     margin-top: 2rem;
   }
+  .container-1 {
+    display: flex;
+    gap: 1rem;
+    margin-top: 50px;
+  }
   .square {
     height: 100px;
     width: 100px;
@@ -29,6 +38,12 @@ import Layout from '../layouts/Layout.astro';
 
 <script>
   const square = document.querySelector('.square') as HTMLDivElement;
+  const playButton = document.querySelector(
+    '.container-1 button:nth-of-type(1)'
+  ) as HTMLButtonElement;
+  const pauseButton = document.querySelector(
+    '.container-1 button:nth-of-type(2)'
+  ) as HTMLButtonElement;
 
   /* square.style.transform = 'rotate(45deg)';
 
@@ -44,16 +59,35 @@ import Layout from '../layouts/Layout.astro';
     }
   }, 1000 / 60); */
   const keyframes = [
-    { transform: 'translateX(0px)translateY(0px)' },
-    { transform: 'translateX(100px)' },
-    { transform: 'translateX(100px)translateY(100px)' },
-    { transform: 'translateX(0px) translateY(100px)' },
-    { transform: 'translateX(0px)translateY(0px)' },
+    { transform: 'translateX(0px)translateY(0px)', easing: 'ease-in-out' },
+    {
+      transform: 'translateX(100px) rotate(45deg)',
+      offseat: 0.2,
+      easing: 'ease-in-out',
+    },
+    {
+      transform: 'translateX(100px)translateY(100px)',
+      scale: 0.8,
+      easing: 'ease-in-out',
+    },
+    {
+      transform: 'translateX(0px) translateY(100px) rotate(90deg)',
+      offseat: 0.8,
+      easing: 'ease-in-out',
+    },
+    { transform: 'translateX(0px)translateY(0px)', easing: 'ease-in-out' },
   ];
   const options: KeyframeAnimationOptions = {
     duration: 2000,
     iterations: 3,
     easing: 'ease-in-out',
   };
-  square.animate(keyframes, options);
+
+  const animation: Animation = square.animate(keyframes, options);
+  playButton.addEventListener('click', () => {
+    animation.play();
+  });
+  pauseButton.addEventListener('click', () => {
+    animation.pause();
+  });
 </script>
