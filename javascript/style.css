@@ -40,7 +40,7 @@ form input {
 }
 
 .hit {
-  background: url('/javascript/assets/hit.png') no-repeat center center;
+  background: url('/javascript/assets/hit.svg') no-repeat center center;
 }
 .miss {
   background: url('/javascript/assets/miss.png') no-repeat center center;

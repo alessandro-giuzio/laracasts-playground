@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="80" height="80">
+  <!-- Explosion burst -->
+  <polygon points="50,5 58,35 88,25 68,48 95,58 65,62 72,92 50,72 28,92 35,62 5,58 32,48 12,25 42,35" fill="#ff4500" />
+  <!-- Inner glow -->
+  <polygon points="50,22 55,40 72,34 60,50 78,56 60,58 65,76 50,64 35,76 40,58 22,56 40,50 28,34 45,40" fill="#ffd700" />
+  <!-- Center -->
+  <circle cx="50" cy="50" r="12" fill="#fff5c0" />
+</svg>
